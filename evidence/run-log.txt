@@ -1,22 +1,24 @@
-[edgevoc] start: 2026-06-21T01:59:45.292Z
-[edgevoc] input: data/sample-feedback.csv
+[edgevoc] start: 2026-06-21T02:48:03.924Z
+[edgevoc] input: data\sample-feedback.csv
 [edgevoc] parsed 15 feedback rows
 [edgevoc] loading local model via @qvac/sdk ...
+[sdk:server] Stale lock file detected (PID 23244 is dead, started 2026-06-21T02:45:58.335Z). Removing.
 [sdk:server] 🐻 Hello from Bare
 [sdk:server] Parsed RPC configuration from arguments
-[sdk:server] Running in desktop mode, connecting to IPC socket: /tmp/qvac-worker-1860-mqn52g7s-6d3e.sock
-[sdk:server] Connecting to IPC socket at /tmp/qvac-worker-1860-mqn52g7s-6d3e.sock
+[sdk:server] Running in desktop mode, connecting to IPC socket: \\.\pipe\qvac-worker-50064-mqn6skt9-5cbd
+[sdk:server] Connecting to IPC socket at \\.\pipe\qvac-worker-50064-mqn6skt9-5cbd
 [sdk:server] Bare worker started and listening for RPC requests
 [sdk:server] Connected to IPC server
 [sdk:client] ℹ️ No config file found, using SDK defaults
-[sdk:client] 📱 Runtime context: { runtime: 'node', platform: 'linux' }
+[sdk:client] 📱 Runtime context: { runtime: 'node', platform: 'win32' }
 [sdk:client] ✅ Initialization complete
-[sdk:server] [request-lifecycle] begin requestId=0d898bc1-4141-45d9-86a4-96101e6325c2 kind=loadModel modelId=- state=running
+[sdk:server] [request-lifecycle] begin requestId=51a3cc06-fe96-4c52-bfcc-96c933bb969a kind=loadModel modelId=- state=running
 [sdk:server] Loading from registry: unsloth/Llama-3.2-1B-Instruct-GGUF/blob/b69aef112e9f895e6f98d7ae0949f72ff09aa401/Llama-3.2-1B-Instruct-Q4_0.gguf
-[sdk:server] ✅ Model cached with correct size: /home/wdecoded92/.qvac/models/f2bade0bc5cd4a8c_Llama-3.2-1B-Instruct-Q4_0.gguf
-[sdk:server] ✅ Model already cached and validated: /home/wdecoded92/.qvac/models/f2bade0bc5cd4a8c_Llama-3.2-1B-Instruct-Q4_0.gguf
-[sdk:server] ✅ Using cached model: /home/wdecoded92/.qvac/models/f2bade0bc5cd4a8c_Llama-3.2-1B-Instruct-Q4_0.gguf
-[sdk:server] Loaded Model to /home/wdecoded92/.qvac/models/f2bade0bc5cd4a8c_Llama-3.2-1B-Instruct-Q4_0.gguf
+[sdk:server] ✅ Model cached with correct size: C:\Users\fboussari\.qvac\models\f2bade0bc5cd4a8c_Llama-3.2-1B-Instruct-Q4_0.gguf
+[sdk:server] ✅ Model already cached and validated: C:\Users\fboussari\.qvac\models\f2bade0bc5cd4a8c_Llama-3.2-1B-Instruct-Q4_0.gguf
+[sdk:server] ✅ Using cached model: C:\Users\fboussari\.qvac\models\f2bade0bc5cd4a8c_Llama-3.2-1B-Instruct-Q4_0.gguf
+[sdk:server] Loaded Model to C:\Users\fboussari\.qvac\models\f2bade0bc5cd4a8c_Llama-3.2-1B-Instruct-Q4_0.gguf
+[sdk:server] llamacpp-completion: Loading model 31b329c97909457e...
 [edgevoc:model] {
   type: 'modelProgress',
   downloaded: 773025824,
@@ -24,50 +26,41 @@
   percentage: 100,
   downloadKey: 'registry:hf:unsloth/Llama-3.2-1B-Instruct-GGUF/blob/b69aef112e9f895e6f98d7ae0949f72ff09aa401/Llama-3.2-1B-Instruct-Q4_0.gguf'
 }
-[sdk:server] llamacpp-completion: Loading model 31b329c97909457e...
 parse: load the model metadata from disk file.
-warning: no usable GPU found, --gpu-layers option will be ignored
-warning: one possible reason is that llama.cpp was compiled without GPU support
-warning: consult docs/build.md for compilation instructions
 initFromConfig: load the model from disk file and apply lora adapter, if any.
 common_init_result: fitting params to device memory, for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on
 common_init_result: added <|end_of_text|> logit bias = -inf
 common_init_result: added <|eom_id|> logit bias = -inf
 common_init_result: added <|eot_id|> logit bias = -inf
 [sdk:server] llamacpp-completion model 31b329c97909457e loaded
-[sdk:server] Local model registered: 31b329c97909457e (LLAMA_3_2_1B_INST_Q4_0) -> /home/wdecoded92/.qvac/models/f2bade0bc5cd4a8c_Llama-3.2-1B-Instruct-Q4_0.gguf
-[sdk:server] [request-lifecycle] end requestId=0d898bc1-4141-45d9-86a4-96101e6325c2 kind=loadModel modelId=- state=completed durationMs=7245
+[sdk:server] Local model registered: 31b329c97909457e (LLAMA_3_2_1B_INST_Q4_0) -> C:\Users\fboussari\.qvac\models\f2bade0bc5cd4a8c_Llama-3.2-1B-Instruct-Q4_0.gguf
+[sdk:server] [request-lifecycle] end requestId=51a3cc06-fe96-4c52-bfcc-96c933bb969a kind=loadModel modelId=- state=completed durationMs=3835
 [edgevoc] model loaded. modelId=31b329c97909457e
 [edgevoc] running local completion (this is on-device, not a cloud API call) ...
-[sdk:server] [request-lifecycle] begin requestId=97c28e7b-26ca-4b55-9fee-62f140733bdc kind=completion modelId=31b329c97909457e state=running
+[sdk:server] [request-lifecycle] begin requestId=6997a5a8-3c2e-44aa-addd-6c266ce866b5 kind=completion modelId=31b329c97909457e state=running
 ## Themes
-
-* Customer satisfaction with billing response
-* UI and design improvements
-* App performance and reliability
-* Customer support and responsiveness
+• Inconsistent Response Times for Support
+• UI Refresh Not Addressing All Concerns
+• Confusing Pricing Page
+• Poor Handling of GDPR Data
+• Ineffective Product Support
+• Inefficient Billed Subscriptions
 
 ## Pain Points
-
-* Customer dissatisfaction with billing process
-* Difficulty in finding information
-* App crashes or bugs
-* Customer support issues and inconsistent answers
-* Billing errors and unnecessary charges
-* Difficulty in onboarding or migrating to new platform
-* App issues and frustrations
+• Frustrated by Unhelpful Reps
+• Unable to Find Information with New UI
+• Confused by Pricing and Subscription Options
+• Inconvenient Billing Process
+• Disappointed by Ineffective Customer Support
 
 ## Risk Signals
-
-* Billing errors [9, 10, 14]
-* Data loss or corruption [1, 7]
-* Compliance issues [1, 2, 10, 14] (GDPR, billing errors)
-* Customer churn [4, 9, 13, 14]
-* App crashes or bugs [3, 7]
+• Billing Errors [3, 15]
+• Data Loss [4, 14]
+• Compliance Issues [4, 14]
+• Unreliable Customer Support [1, 12]
 
 ## Executive Brief
-
-We identified several key pain points and risk signals in this customer feedback batch. Customer dissatisfaction with billing processes and onboarding can negatively impact customer retention. Billing errors, data loss, and compliance issues require prompt resolution to minimize risks. Customer churn and frustration with app performance and UI can lead to negative word-of-mouth and lost sales. We will use this feedback to inform our quality assurance and development processes to improve the overall customer experience and mitigate risks.[sdk:server] [request-lifecycle] end requestId=97c28e7b-26ca-4b55-9fee-62f140733bdc kind=completion modelId=31b329c97909457e state=completed durationMs=31651
+[15] Despite its solid product, [Customer Name] is dissatisfied with the billing process, citing multiple errors and a lengthy refund process. The company must address these issues to improve customer satisfaction and build trust. Recommendations include implementing a more robust billing system and refining the support process to provide more accurate and timely assistance.[sdk:server] [request-lifecycle] end requestId=6997a5a8-3c2e-44aa-addd-6c266ce866b5 kind=completion modelId=31b329c97909457e state=completed durationMs=12398
 
 [edgevoc] completion finished.
 [sdk:server] Model 31b329c97909457e unloaded
@@ -75,10 +68,6 @@ We identified several key pain points and risk signals in this customer feedback
 [sdk:client] 🧹 Closing RPC client
 [sdk:client] 🐻🔫 Killing bare worker process
 [sdk:client] 🔌 Closing IPC server
-[sdk:server] 🐻 Bare worker shutdown signal received, cleaning up...
-[sdk:server] 🧹 Cancelling 0 active downloads
-[sdk:server] Unloaded 0 models
-[sdk:server] ✅ Cleanup completed successfully
 [edgevoc] model unloaded.
-[edgevoc] report written to output/edgevoc-report.md
-[edgevoc] start: 2026-06-21T01:59:45.292Z | end: 2026-06-21T02:00:27.324Z
+[edgevoc] report written to output\edgevoc-report.md
+[edgevoc] start: 2026-06-21T02:48:03.924Z | end: 2026-06-21T02:48:23.066Z

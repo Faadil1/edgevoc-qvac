@@ -57,36 +57,47 @@ edgevoc/
 ├── data/sample-feedback.csv synthetic sample input (no real PII)
 ├── output/edgevoc-report.md generated report (created when you run the tool)
 ├── evidence/
-│   ├── SPIKE-RESULT.md     proof the @qvac/sdk lifecycle works (Cloud Shell run)
-│   └── run-log.txt         exact stdout/stderr of the full pipeline run
-├── TEST-EVIDENCE.md         what's proven, what's not, how to verify
+│   ├── SPIKE-RESULT.md     earlier feasibility spike (Google Cloud Shell)
+│   ├── run-log.txt         final proof run log (Windows laptop)
+│   └── hardware-windows.txt final proof environment hardware/software spec
+├── TEST-EVIDENCE.md         what's proven, on which environment
 ├── LIMITATIONS.md           hardware/GPU/dataset disclosures — read this
 └── SUBMISSION.md            hackathon submission framing
 ```
 
-## What is and isn't proven right now
+## What is proven, and on what hardware
 
-This README will not claim more than has been demonstrated. The final
-build is the **original proven implementation** — the version that
-produced a complete, successful end-to-end run. Two grounding/citation
-prompt patches were attempted during audit and both caused the prompt
-to exceed the Llama 3.2 1B context window; they were rolled back and
-are not part of this submission.
+This is a personal-laptop, consumer-hardware proof of `@qvac/sdk`
+local inference — not a cloud-only demo.
 
-See:
+**Final proof environment: personal Windows laptop.**
 
-- `evidence/SPIKE-RESULT.md` — confirms the `@qvac/sdk` install → model
-  download → load → streamed completion lifecycle works (Google Cloud
-  Shell, CPU-only).
-- `TEST-EVIDENCE.md` — the real, final pipeline result (15 rows,
-  PROVEN) and exactly what is and isn't covered by it.
-- `LIMITATIONS.md` — explicit disclosure on hardware, GPU, dataset,
-  and known formatting/citation limitations of the 1B model.
+- Manufacturer/model: HP ProBook 455 15.6 inch G9 Notebook PC
+- OS: Microsoft Windows 11 Pro 10.0.26200
+- CPU: AMD Ryzen 7 5825U with Radeon Graphics
+- RAM: 15.3 GB
+- Node.js: v24.16.0 / npm: 11.13.0
 
-In the current report, **Risk Signals bullets carry row-ID citations;
-Themes and Pain Points bullets do not consistently**. This is a known
-limitation of unconstrained 1B-model output, not a bug introduced by
-this rollback — see `LIMITATIONS.md`.
+On this machine: `data/sample-feedback.csv` (15 rows) was parsed,
+`LLAMA_3_2_1B_INST_Q4_0` was downloaded and stored locally under
+`.qvac/models`, loaded, and run through `@qvac/sdk`'s local
+`completion()` API. No external AI API was used. Completion succeeded
+and the report was written to `output/edgevoc-report.md`, containing
+all four required sections: Themes, Pain Points, Risk Signals, and
+Executive Brief.
+
+A **Windows CRLF compatibility fix** was applied in `src/edgevoc.js`
+to support this environment.
+
+Google Cloud Shell was used earlier in this project only as a
+feasibility spike (confirming the `@qvac/sdk` install → model download
+→ load → streamed completion lifecycle works at all) — it is not the
+final proof environment. See `evidence/SPIKE-RESULT.md` for that
+earlier spike, and `evidence/run-log.txt` plus
+`evidence/hardware-windows.txt` for the final Windows laptop proof.
+
+See `TEST-EVIDENCE.md` and `LIMITATIONS.md` for full detail, including
+the citation-coverage limitation in the current report.
 
 ## No-cloud-AI statement
 

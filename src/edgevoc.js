@@ -36,11 +36,11 @@ function readCsv(filePath) {
     throw new Error(`Input file not found: ${filePath}`);
   }
   const raw = fs.readFileSync(filePath, "utf8").trim();
-  const lines = raw.split("\n");
+  const lines = raw.split(/\r?\n/);
   const header = lines[0].split(",");
   const rows = lines.slice(1).map((line) => {
     // Minimal CSV split tolerant of quoted commas-free fields in this dataset.
-    const match = line.match(/^(\d+),([^,]+),"(.+)"$/);
+    const match = line.trim().match(/^(\d+),([^,]+),"(.+)"$/);
     if (!match) return null;
     const [, id, source, text] = match;
     return { id, source, text };

@@ -1,0 +1,10 @@
+Environment: Personal Windows laptop
+Manufacturer: HP
+Model: HP ProBook 455 15.6 inch G9 Notebook PC
+OS: Microsoft Windows 11 Pro 10.0.26200
+CPU: AMD Ryzen 7 5825U with Radeon Graphics
+RAM_GB: 15.3
+Node: v24.16.0
+npm: 11.13.0
+Inference: Local via @qvac/sdk
+External AI API: None
