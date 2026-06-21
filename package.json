@@ -1,0 +1,30 @@
+{
+  "name": "edgevoc",
+  "version": "1.0.0",
+  "description": "Private offline feedback analyst — local CLI using @qvac/sdk for on-device LLM inference. No cloud AI calls.",
+  "type": "module",
+  "main": "src/edgevoc.js",
+  "bin": {
+    "edgevoc": "src/edgevoc.js"
+  },
+  "scripts": {
+    "start": "node src/edgevoc.js data/sample-feedback.csv",
+    "run-spike-evidence": "node src/edgevoc.js data/sample-feedback.csv > evidence/run-log.txt 2>&1"
+  },
+  "keywords": [
+    "qvac",
+    "edge-ai",
+    "local-ai",
+    "offline",
+    "privacy",
+    "llm"
+  ],
+  "author": "Faadil1",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.17"
+  },
+  "dependencies": {
+    "@qvac/sdk": "^0.12.0"
+  }
+}
